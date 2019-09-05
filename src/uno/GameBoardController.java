@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
  *
  * @author Xiaohong Deng
  */
-public class FXMLDocumentGameBoardController implements Initializable {
+public class GameBoardController implements Initializable {
     private DeckofCards deck, deadwood;
     private MachinePlayer[] machine=new MachinePlayer[3];
     private HumanPlayer player;
