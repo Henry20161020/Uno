@@ -24,7 +24,7 @@ public class PlayGame extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocumentGameBoard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("GameBoard.fxml"));
 //        Button btn = new Button();
 //        btn.setText("Say 'Hello World'");
 //        btn.setOnAction(new EventHandler<ActionEvent>() {

@@ -5,9 +5,13 @@
  */
 package uno;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,6 +19,8 @@ import javafx.geometry.HPos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javax.swing.JOptionPane;
@@ -77,8 +83,16 @@ public class GameBoardController implements Initializable {
  
                 });
                 button.setText(playerHand.cards.get(i).toString()); 
-                if(i<5) gridpane_player.add(button, 0, i);
-                else gridpane_player.add(button, 1, i-5);
+                if(i<5) gridpane_player.add(button, i, 0);
+                else gridpane_player.add(button, i-5,1);
+                try {
+                    Image image=new Image(new FileInputStream("/Card Images/card_back.png"));
+                    ImageView imageView = new ImageView(image);
+                    gridpane_player.add(imageView, 7,2);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(GameBoardController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
                 gridpane_player.setHalignment(button, HPos.LEFT);
         }
 
