@@ -20,13 +20,35 @@ public class Cards {
     * make the Suit type an Enumerated type which are easy to compare and 
     * add a layer of coupling if we want to change them.
     */ 
-    public enum Color {RED, YELLOW, GREEN, BLUE};
+    public enum Color {red, yellow, green, blue};
 
     /**
      * make the Value type an Enumerated type which are easy to compare and 
      * add a layer of coupling if we want to change them.
      */ 
-    public enum Value{ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, SKIP, REVERSE, DRAWTWO, DRAWFOUR, WILDCARD};
+    public enum Value{      
+        ZERO("0"),
+        ONE("1"),
+        TWO("2"),
+        THREE("3"),
+        FOUR("4"),
+        FIVE("5"),
+        SIX("6"),
+        SEVEN("7"), 
+        EIGHT("8"),
+        NINE("9"),
+        SKIP("skip"),
+        REVERSE("reverse"),
+        DRAWTWO("picker"),
+        DRAWFOUR("pick_four"),
+        WILDCARD("color_change");
+        
+        private final String alias;
+        Value(String name) {
+            this.alias=name;
+        }
+    
+    }
     private final Color color;
     private final Value value;
 

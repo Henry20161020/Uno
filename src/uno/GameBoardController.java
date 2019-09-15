@@ -86,7 +86,7 @@ public class GameBoardController implements Initializable {
                 if(i<5) gridpane_player.add(button, i, 0);
                 else gridpane_player.add(button, i-5,1);
                 try {
-                    Image image=new Image(new FileInputStream("/Card Images/card_back.png"));
+                    Image image=new Image(new FileInputStream("Card Images/card_back.png"));
                     ImageView imageView = new ImageView(image);
                     gridpane_player.add(imageView, 7,2);
                 } catch (FileNotFoundException ex) {
